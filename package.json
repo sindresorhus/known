@@ -1,0 +1,42 @@
+{
+  "name": "known",
+  "version": "0.0.0",
+  "description": "Allow only access to known object properties using ES6 Proxy",
+  "license": "MIT",
+  "repository": "sindresorhus/known",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha --harmony"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "object",
+    "obj",
+    "property",
+    "properties",
+    "prop",
+    "get",
+    "getter",
+    "access",
+    "proxy",
+    "proxies",
+    "es6",
+    "es2015",
+    "harmony"
+  ],
+  "dependencies": {
+    "harmony-reflect": "^1.1.1"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  }
+}
