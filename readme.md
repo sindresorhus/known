@@ -1,6 +1,6 @@
 # known [![Build Status](https://travis-ci.org/sindresorhus/known.svg?branch=master)](https://travis-ci.org/sindresorhus/known)
 
-> Allow only access to known object properties using [ES6 Proxy](http://soft.vub.ac.be/~tvcutsem/proxies/)
+> Allow only access to known object properties using [ES2015 Proxy](http://soft.vub.ac.be/~tvcutsem/proxies/)
 
 -
 

@@ -1,7 +1,7 @@
 {
   "name": "known",
   "version": "1.0.0",
-  "description": "Allow only access to known object properties using ES6 Proxy",
+  "description": "Allow only access to known object properties using ES2015 Proxy",
   "license": "MIT",
   "repository": "sindresorhus/known",
   "author": {
@@ -29,9 +29,7 @@
     "access",
     "proxy",
     "proxies",
-    "es6",
-    "es2015",
-    "harmony"
+    "es2015"
   ],
   "dependencies": {
     "harmony-reflect": "^1.1.1"
