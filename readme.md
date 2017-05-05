@@ -26,6 +26,26 @@ obj = known(obj);
 // throws a TypeError when you try to access an unknown property
 console.log(obj.bar);
 //=> [TypeError] Unknown property: bar
+
+// setting a property, not much difference from actually setting but if not able, now it throw a TypeError exception
+try {
+  obj.randomProperty = 'random';
+} catch (error) {
+  console.log(error instanceof TypeError);
+  console.error(error.message);
+}
+
+// setting readonly flag to true
+obj = known(obj, true);
+
+// Now adding new properties to the object is not possible and it throws a TypeError exception
+try {
+  obj.randomProperty = 'random';
+} catch (error) {
+  console.log(error instanceof TypeError);
+  console.error(error.message);
+}
+
 ```
 
 
