@@ -2,7 +2,7 @@
 
 require('harmony-reflect');
 
-module.exports = function (target, readonly = false) {
+module.exports = function (target, readonly) {
 	var handler = {
 		get: function (target, name, receiver) {
 			if (!(name in target)) {
