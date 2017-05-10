@@ -26,6 +26,7 @@ obj = known(obj);
 // throws a TypeError when you try to access an unknown property
 console.log(obj.bar);
 //=> [TypeError] Unknown property: bar
+
 ```
 
 
