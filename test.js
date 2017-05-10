@@ -5,20 +5,20 @@ var chai = require('chai');
 var known = require('./');
 
 it('should get values', function () {
-	var x = known({ foo: true });
+	var instance = known({ foo: true });
 
-	assert.strictEqual(x.foo, true);
+	assert.strictEqual(instance.foo, true);
 
 	assert.throws(function () {
-		console.log(x.bar);
+		console.log(instance.bar);
 	});
 });
 
 it('should not get values', function () {
-	var x = known({ foo: true });
+	var instance = known({ foo: true });
 
 	var getObjectProperty = function () {
-		console.log(x.randomProperty);
+		console.log(instance.randomProperty);
 	}
 
 	chai.expect(
@@ -28,24 +28,41 @@ it('should not get values', function () {
 	);
 });
 
-it('should set values', function () {
-	var x = known({ foo: true });
+it('should add decorator to set a property on the object', function () {
+	var instance = known({ foo: true });
 
-	x.randomProperty = true;
+	var decorator = function (obj) {
+		obj.property = 'property';
+	};
 
-	chai.expect(x.randomProperty).to.equal(true);
-});
-
-it('should not set values to target', function () {
-	var x = known({ foo: true }, true);
-
-	var setObjectProperty = function () {
-		x.randomProperty = 'test';
-	}
+	instance.decorateWith(decorator);
 
 	chai.expect(
-		setObjectProperty
-	).to.throw(
-		'Readonly object: Please don\'t set properties on this object.'
+		instance.property
+	).to.equal(
+		'property'
+	);
+});
+
+it('should add decorator to set first and last names', function () {
+	var instance = known({ foo: true });
+
+	var decorator = function (obj) {
+		obj.setName = function (first, last) {
+	    this.first = first;
+	    this.last = last;
+	  };
+	};
+
+	instance.decorateWith(decorator);
+
+	instance.setName('Pedro', 'Bras');
+
+	chai.expect(
+		instance.first,
+		instance.last
+	).to.equal(
+		'Pedro',
+		'Bras'
 	);
 });

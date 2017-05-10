@@ -2,28 +2,22 @@
 
 require('harmony-reflect');
 
-module.exports = function (target, readonly) {
+module.exports = function (target) {
 	var handler = {
-		get: function (target, name, receiver) {
+		get: function (target, name) {
 			if (!(name in target)) {
 				throw new TypeError('Unknown property: ' + name);
 			}
 
-			return Reflect.get(target, name, receiver);
-		},
-
-		set: function(target, name, val, receiver) {
-			if (!(name in target) && readonly) {
-				throw new Error('Readonly object: Please don\'t set properties on this object.');
-			}
-
-			target[name] = val;
-
-			return true;
+			return Reflect.get(target, name);
 		}
 	};
 
-	return function () {
-		return new Proxy(target, handler);
-	}.call(this, target);
+	var instance = new Proxy(target, handler);
+
+	instance.decorateWith = function (fn) {
+		return fn(instance);
+	}
+
+	return instance;
 };
