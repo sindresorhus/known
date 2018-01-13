@@ -1,14 +1,12 @@
 'use strict';
-require('harmony-reflect');
-
-module.exports = function (obj) {
-	return new Proxy(obj, {
-		get: function (target, name, receiver) {
-			if (!(name in target)) {
-				throw new TypeError('Unknown property: ' + name);
+module.exports = object => {
+	return new Proxy(object, {
+		get(target, property, receiver) {
+			if (!(property in target)) {
+				throw new TypeError(`Unknown property: ${property}`);
 			}
 
-			return Reflect.get(target, name, receiver);
+			return Reflect.get(target, property, receiver);
 		}
 	});
 };

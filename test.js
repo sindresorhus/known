@@ -1,12 +1,12 @@
-'use strict';
-var assert = require('assert');
-var known = require('./');
-var x = known({foo: true});
+import test from 'ava';
+import m from '.';
 
-it('should get values', function () {
-	assert.strictEqual(x.foo, true);
+test(t => {
+	const result = m({foo: true});
 
-	assert.throws(function () {
-		console.log(x.bar);
+	t.true(result.foo);
+
+	t.throws(() => {
+		console.log(result.bar);
 	});
 });

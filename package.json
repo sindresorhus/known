@@ -1,40 +1,37 @@
 {
-  "name": "known",
-  "version": "1.0.0",
-  "description": "Allow only access to known object properties using ES2015 Proxy",
-  "license": "MIT",
-  "repository": "sindresorhus/known",
-  "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com"
-  },
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "scripts": {
-    "test": "mocha --harmony --harmony-proxies"
-  },
-  "files": [
-    "index.js"
-  ],
-  "keywords": [
-    "object",
-    "obj",
-    "property",
-    "properties",
-    "prop",
-    "get",
-    "getter",
-    "access",
-    "proxy",
-    "proxies",
-    "es2015"
-  ],
-  "dependencies": {
-    "harmony-reflect": "^1.1.1"
-  },
-  "devDependencies": {
-    "mocha": "*"
-  }
+	"name": "known",
+	"version": "1.0.0",
+	"description": "Allow only access to known object properties using ES2015 Proxy",
+	"license": "MIT",
+	"repository": "sindresorhus/known",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=4"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"object",
+		"property",
+		"properties",
+		"prop",
+		"get",
+		"getter",
+		"access",
+		"proxy",
+		"proxies",
+		"es2015"
+	],
+	"devDependencies": {
+		"ava": "*",
+		"xo": "*"
+	}
 }

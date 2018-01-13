@@ -1,41 +1,36 @@
 # known [![Build Status](https://travis-ci.org/sindresorhus/known.svg?branch=master)](https://travis-ci.org/sindresorhus/known)
 
-> Allow only access to known object properties using [ES2015 Proxy](http://soft.vub.ac.be/~tvcutsem/proxies/)
-
--
-
-> Proxies are objects for which the programmer has to define the semantics in JavaScript. The default object semantics are implemented in the JavaScript engine, often written in lower-level languages like C++. Proxies let the programmer define most of the behavior of an object in JavaScript. They are said to provide a meta-programming API.
+> Allow only access to known object properties using [ES2015 `Proxy`](https://ponyfoo.com/articles/es6-proxies-in-depth)
 
 
 ## Usage
 
 ```
-$ npm install --save known
+$ npm install known
 ```
 
 ```js
-var known = require('known');
+const known = require('known');
 
-var obj = {foo: true};
+const obj = {foo: true};
 
 console.log(obj.bar);
 //=> undefined
 
-obj = known(obj);
+const obj2 = known(obj);
 
-// throws a TypeError when you try to access an unknown property
-console.log(obj.bar);
+// Throws a TypeError when you try to access an unknown property
+console.log(obj2.bar);
 //=> [TypeError] Unknown property: bar
 ```
 
 
-## Compatibility
+## Related
 
-- Node >=0.8.0: `node --harmony --harmony-proxies`
-- Chrome - with the this flag enabled `chrome://flags/#enable-javascript-harmony` *(copy/paste into address-bar)*
-- Firefox >=12
+- [on-change](https://github.com/sindresorhus/on-change) - Watch an object or array for changes (Uses `Proxy` too)
+- [negative-array](https://github.com/sindresorhus/negative-array) - Negative array index support (Uses `Proxy` too)
 
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)
