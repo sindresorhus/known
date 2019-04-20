@@ -1,8 +1,8 @@
 import test from 'ava';
-import m from '.';
+import known from '.';
 
-test(t => {
-	const result = m({foo: true});
+test('main', t => {
+	const result = known({foo: true});
 
 	t.true(result.foo);
 

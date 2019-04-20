@@ -12,15 +12,15 @@ $ npm install known
 ```js
 const known = require('known');
 
-const obj = {foo: true};
+const object = {foo: true};
 
-console.log(obj.bar);
+console.log(object.bar);
 //=> undefined
 
-const obj2 = known(obj);
+const object2 = known(object);
 
 // Throws a TypeError when you try to access an unknown property
-console.log(obj2.bar);
+console.log(object2.bar);
 //=> [TypeError] Unknown property: bar
 ```
 
