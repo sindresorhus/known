@@ -2,12 +2,13 @@
 
 > Allow only access to known object properties using [ES2015 `Proxy`](https://ponyfoo.com/articles/es6-proxies-in-depth)
 
-
-## Usage
+## Install
 
 ```
 $ npm install known
 ```
+
+## Usage
 
 ```js
 const known = require('known');
@@ -24,13 +25,9 @@ console.log(object2.bar);
 //=> [TypeError] Unknown property: bar
 ```
 
+Note that `known` transparently wraps the given object, meaning prototype properties will also exist. So `known(someObject).__proto__` does not throw. If you want non-own properties to throw, ensure your object is created with `Object.create(null)`.
 
 ## Related
 
 - [on-change](https://github.com/sindresorhus/on-change) - Watch an object or array for changes (Uses `Proxy` too)
 - [negative-array](https://github.com/sindresorhus/negative-array) - Negative array index support (Uses `Proxy` too)
-
-
-## License
-
-MIT © [Sindre Sorhus](https://sindresorhus.com)

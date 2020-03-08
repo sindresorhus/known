@@ -4,10 +4,11 @@
 	"description": "Allow only access to known object properties using ES2015 Proxy",
 	"license": "MIT",
 	"repository": "sindresorhus/known",
+	"funding": "https://github.com/sponsors/sindresorhus",
 	"author": {
 		"name": "Sindre Sorhus",
 		"email": "sindresorhus@gmail.com",
-		"url": "sindresorhus.com"
+		"url": "https://sindresorhus.com"
 	},
 	"engines": {
 		"node": ">=8"

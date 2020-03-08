@@ -17,6 +17,6 @@ console.log(object2.bar);
 //=> [TypeError] Unknown property: bar
 ```
 */
-declare function known<T extends {[key: string]: unknown}>(object: T): T;
+declare function known<T extends Record<string, any>>(object: T): T;
 
 export = known;
