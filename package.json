@@ -1,6 +1,6 @@
 {
 	"name": "known",
-	"version": "3.0.0",
+	"version": "4.0.0",
 	"description": "Allow only access to known object properties using ES2015 Proxy",
 	"license": "MIT",
 	"repository": "sindresorhus/known",
