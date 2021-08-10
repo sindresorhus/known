@@ -1,5 +1,5 @@
 import test from 'ava';
-import known from '.';
+import known from './index.js';
 
 test('main', t => {
 	const result = known({foo: true});

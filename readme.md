@@ -11,7 +11,7 @@ $ npm install known
 ## Usage
 
 ```js
-const known = require('known');
+import known from 'known';
 
 const object = {foo: true};
 

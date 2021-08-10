@@ -1,5 +1,5 @@
 import {expectType, expectError} from 'tsd';
-import known = require('.');
+import known from './index.js';
 
 const object = {foo: true};
 const object2 = known(object);

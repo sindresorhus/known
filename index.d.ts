@@ -3,7 +3,7 @@ Allow only access to known object properties using [ES2015 `Proxy`](https://pony
 
 @example
 ```
-import known = require('known');
+import known from 'known';
 
 const object = {foo: true};
 
@@ -17,6 +17,4 @@ console.log(object2.bar);
 //=> [TypeError] Unknown property: bar
 ```
 */
-declare function known<T extends Record<string, any>>(object: T): T;
-
-export = known;
+export default function known<T extends Record<string, any>>(object: T): T;

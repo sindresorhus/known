@@ -1,5 +1,4 @@
-'use strict';
-module.exports = object => {
+export default function known(object) {
 	return new Proxy(object, {
 		get(target, property, receiver) {
 			if (!(property in target)) {
@@ -7,6 +6,6 @@ module.exports = object => {
 			}
 
 			return Reflect.get(target, property, receiver);
-		}
+		},
 	});
-};
+}
